@@ -1,0 +1,11 @@
+{
+  "imports": {
+    "~/": "./",
+    "std/": "https://deno.land/std@0.73.0/",
+    "cotton/": "https://deno.land/x/cotton@v0.7.2/",
+    "oak/": "https://deno.land/x/oak@v6.3.1/",
+    "oak_logger/": "https://deno.land/x/oak_logger@1.0.0/",
+    "oak_graphql/": "https://deno.land/x/oak_graphql@0.6.2/",
+    "jwt/": "https://deno.land/x/djwt@v1.7/"
+  }
+}

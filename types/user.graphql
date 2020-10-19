@@ -1,0 +1,22 @@
+type User {
+  id: ID!
+  firstName: String!
+  lastName: String!
+  email: String!
+}
+
+input UserInput {
+  _: Boolean
+}
+
+input UserFilter {
+  _: Boolean
+}
+
+extend type Query {
+  user(id: ID): User
+  users(filter: UserFilter): [User]
+  createUser(input: UserInput): User
+  updateUser(input: UserInput): User
+  deleteUser(id: ID): Boolean
+}
