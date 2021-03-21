@@ -1,0 +1,25 @@
+type Article {
+  uuid: ID!
+  title: String!
+  content: String!
+}
+
+input ArticleInput {
+  title: String
+  content: String
+}
+
+input ArticleFilter {
+  page: Int
+}
+
+extend type Query {
+  article(uuid: ID!): Article!
+  articles(filter: ArticleFilter): [Article!]!
+}
+
+extend type Mutation {
+  createArticle(input: ArticleInput!): Article!
+  updateArticle(uuid: ID!, input: ArticleInput!): Article!
+  deleteArticle(uuid: ID!): Boolean!
+}

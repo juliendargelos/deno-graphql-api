@@ -14,14 +14,15 @@ export default {
   lock: 'lock.json',
   watch: false,
   scripts: {
-    install: `deno cache cache.ts --lock-write`,
+    install: 'deno cache cache.ts --lock-write',
     start: {
-      cmd: `deno run mod.ts ${PRODUCTION ? '--no-check' : ''}`,
+      cmd: `deno run mod.ts ${PRODUCTION || true ? '--no-check' : ''}`,
       watch: DEVELOPMENT,
       allow: ALLOW
     },
-    cotton: {
-      cmd: `deno run bin/cotton.ts --no-check`,
+    'cotton': {
+      cmd: `deno run bin/cotton.ts`,
+      lock: undefined,
       allow: ALLOW
     },
     'docker:build': `docker build -t ${IMAGE}:local .`,
