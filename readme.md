@@ -10,7 +10,7 @@ The API is splitted in several modules located in the `modules` folder. To add a
 
 This is the [article crud module example](modules/article):
 
-**Define types**
+##### Define types
 
 ```graphql
 # modules/articles/types.ts
@@ -42,7 +42,7 @@ extend type Mutation {
 }
 ```
 
-**Define a model**
+##### Define a model
 
 ```typescript
 // modules/articles/Article.ts
@@ -55,7 +55,7 @@ import { BaseModel, Model, Column, DataType } from '~/modules/core/Model.ts'
 }
 ```
 
-**Define resolvers**
+##### Define resolvers
 
 ```typescript
 // modules/articles/resolvers.ts
@@ -90,7 +90,7 @@ export const Mutation = {
 }
 ```
 
-**Export from mod.ts**
+##### Export from mod.ts
 
 ```typescript
 import { Article } from './Article.ts'
@@ -118,7 +118,7 @@ Base user model and resolvers.
 
 Adds the ability to authenticate users with jwt. It also injects an `authentication` object in the resolvers context.
 
-**Authenticate**
+##### Authenticate
 
 ```graphql
 mutation($input: AuthenticationInput!) {
@@ -136,7 +136,7 @@ mutation($input: AuthenticationInput!) {
 
 The `Authorization` header must then be set with the returned token.
 
-**Get authentication infos**
+##### Get authentication infos
 
 ```graphql
 {
@@ -150,7 +150,7 @@ The `Authorization` header must then be set with the returned token.
 }
 ```
 
-**Ensure authentication**
+##### Ensure authentication
 
 ```typescript
 import { Article } from './Article.ts'
