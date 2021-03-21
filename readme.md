@@ -6,7 +6,7 @@ Template for a deno modular GraphQL api.
 
 The API is splitted in several modules located in the `modules` folder. To add a module, create a file `modules/mymodule/mod.ts`. A module can export a set of models, resolvers and GraphQL types thath will be passed to [cotton](https://github.com/rahmanfadhil/cotton) and [oak_graphql](https://github.com/aaronwlee/oak-graphql)
 
-##### CRUD module
+#### CRUD module
 
 This is the [article crud module example](modules/article):
 
@@ -106,15 +106,15 @@ export const models = [
 ]
 ```
 
-##### Core module
+#### Core module
 
 The core module contains the logic to autoload all other modules and exports orm tools from cotton to define models as above.
 
-##### User module
+#### User module
 
 Base user model and resolvers.
 
-##### Authentication module
+#### Authentication module
 
 Adds the ability to authenticate users with jwt. It also injects an `authentication` object in the resolvers context.
 
