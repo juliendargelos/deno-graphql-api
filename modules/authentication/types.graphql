@@ -1,0 +1,17 @@
+type Authentication {
+  token: String!
+  user: User!
+}
+
+input AuthenticationInput {
+  email: String!
+  password: String!
+}
+
+extend type Query {
+  authentication: Authentication!
+}
+
+extend type Mutation {
+  createAuthentication(input: AuthenticationInput!): Authentication!
+}
